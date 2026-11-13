@@ -20,7 +20,7 @@ pipeline {
                     passwordVariable: 'PASS'
                 )]) {
                     sh '''
-                    echo $PASS | docker login docker.lsgserver.dev -u $USER --password-stdin
+                    echo $PASS | docker login $REPOSITORY -u $USER --password-stdin
                     docker push $IMAGE
                     '''
                 }
